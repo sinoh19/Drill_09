@@ -11,7 +11,18 @@ character = load_image('animation_sheet.png')
 running = True
 x, y = WIDTH // 2, HEIGHT // 2
 
+
+def handle_events():
+    global running
+
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            running = False
+
+
 while running:
+    handle_events()
+
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
     character.clip_draw(
