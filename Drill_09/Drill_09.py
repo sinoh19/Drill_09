@@ -14,6 +14,7 @@ pressed_keys = set()
 x, y = WIDTH // 2, HEIGHT // 2
 frame = 0
 facing = 1
+animation = 300
 
 
 def handle_events():
@@ -50,10 +51,17 @@ while running:
     moving = next_x != x or next_y != y
     x, y = next_x, next_y
 
+    if moving:
+        next_animation = 100 if facing == 1 else 0
+    else:
+        next_animation = 300 if facing == 1 else 200
+
+    animation = next_animation
+
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
     character.clip_draw(
-        frame * 100, 300 if facing == 1 else 200, 100, 100,
+        frame * 100, animation, 100, 100,
         x, y, CHARACTER_SIZE, CHARACTER_SIZE
     )
     update_canvas()
