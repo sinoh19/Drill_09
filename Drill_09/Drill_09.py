@@ -45,8 +45,10 @@ while running:
         facing = dir_x
 
     half_size = CHARACTER_SIZE // 2
-    x = max(half_size, min(WIDTH - half_size, x + dir_x * SPEED))
-    y = max(half_size, min(HEIGHT - half_size, y + dir_y * SPEED))
+    next_x = max(half_size, min(WIDTH - half_size, x + dir_x * SPEED))
+    next_y = max(half_size, min(HEIGHT - half_size, y + dir_y * SPEED))
+    moving = next_x != x or next_y != y
+    x, y = next_x, next_y
 
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
