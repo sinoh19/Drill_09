@@ -10,6 +10,7 @@ character = load_image('animation_sheet.png')
 
 running = True
 x, y = WIDTH // 2, HEIGHT // 2
+frame = 0
 
 
 def handle_events():
@@ -29,9 +30,11 @@ while running:
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
     character.clip_draw(
-        0, 300, 100, 100,
+        frame * 100, 300, 100, 100,
         x, y, CHARACTER_SIZE, CHARACTER_SIZE
     )
     update_canvas()
+
+    frame = (frame + 1) % 8
 
 close_canvas()
