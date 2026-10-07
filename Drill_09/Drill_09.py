@@ -56,7 +56,9 @@ while running:
     else:
         next_animation = 300 if facing == 1 else 200
 
-    animation = next_animation
+    if animation != next_animation:
+        animation = next_animation
+        frame = 0
 
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
