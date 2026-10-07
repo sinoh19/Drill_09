@@ -1,9 +1,13 @@
+import os
+
 from pico2d import *
 
 
 WIDTH, HEIGHT = 800, 600
 CHARACTER_SIZE = 100
 SPEED = 5
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 open_canvas(WIDTH, HEIGHT)
 background = load_image('TUK_GROUND.png')
