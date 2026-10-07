@@ -46,7 +46,7 @@ while running:
 
     half_size = CHARACTER_SIZE // 2
     x = max(half_size, min(WIDTH - half_size, x + dir_x * SPEED))
-    y += dir_y * SPEED
+    y = max(half_size, min(HEIGHT - half_size, y + dir_y * SPEED))
 
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
