@@ -7,6 +7,7 @@ WIDTH, HEIGHT = 800, 600
 CHARACTER_SIZE = 100
 SPEED = 5
 
+# 상대 경로 이미지 로드의 기준을 이 파일이 있는 폴더로 고정한다.
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 open_canvas(WIDTH, HEIGHT)
