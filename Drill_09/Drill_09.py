@@ -3,6 +3,7 @@ from pico2d import *
 
 WIDTH, HEIGHT = 800, 600
 CHARACTER_SIZE = 100
+SPEED = 5
 
 open_canvas(WIDTH, HEIGHT)
 background = load_image('TUK_GROUND.png')
@@ -31,6 +32,10 @@ def handle_events():
 
 while running:
     handle_events()
+
+    dir_x = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
+
+    x += dir_x * SPEED
 
     clear_canvas()
     background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
