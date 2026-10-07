@@ -9,6 +9,7 @@ background = load_image('TUK_GROUND.png')
 character = load_image('animation_sheet.png')
 
 running = True
+pressed_keys = set()
 x, y = WIDTH // 2, HEIGHT // 2
 frame = 0
 
@@ -22,6 +23,8 @@ def handle_events():
         elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_ESCAPE:
                 running = False
+            elif event.key in (SDLK_RIGHT, SDLK_LEFT, SDLK_UP, SDLK_DOWN):
+                pressed_keys.add(event.key)
 
 
 while running:
