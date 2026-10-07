@@ -38,6 +38,8 @@ def handle_events():
 
 while running:
     handle_events()
+    if not running:
+        break
 
     dir_x = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
     dir_y = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
