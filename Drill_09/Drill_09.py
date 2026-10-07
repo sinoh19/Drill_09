@@ -50,6 +50,7 @@ while running:
     dir_x = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
     dir_y = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
 
+    # 좌우 키가 함께 눌렸다가 하나만 해제되어도 이동 방향을 바라본다.
     if dir_x != 0:
         facing = dir_x
 
@@ -59,6 +60,8 @@ while running:
     moving = next_x != x or next_y != y
     x, y = next_x, next_y
 
+    # clip_draw의 세로 좌표는 이미지 아래쪽부터 계산한다.
+    # 아래부터 왼쪽 이동, 오른쪽 이동, 왼쪽 idle, 오른쪽 idle.
     if moving:
         next_animation = 100 if facing == 1 else 0
     else:
