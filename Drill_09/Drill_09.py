@@ -36,5 +36,6 @@ while running:
     update_canvas()
 
     frame = (frame + 1) % 8
+    delay(0.05)
 
 close_canvas()
