@@ -2,6 +2,7 @@ from pico2d import *
 
 
 WIDTH, HEIGHT = 800, 600
+CHARACTER_SIZE = 100
 
 open_canvas(WIDTH, HEIGHT)
 background = load_image('TUK_GROUND.png')
@@ -11,7 +12,7 @@ clear_canvas()
 background.draw(WIDTH // 2, HEIGHT // 2, WIDTH, HEIGHT)
 character.clip_draw(
     0, 300, 100, 100,
-    WIDTH // 2, HEIGHT // 2, 100, 100
+    WIDTH // 2, HEIGHT // 2, CHARACTER_SIZE, CHARACTER_SIZE
 )
 update_canvas()
 
