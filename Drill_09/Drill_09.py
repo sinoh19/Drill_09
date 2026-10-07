@@ -41,6 +41,9 @@ while running:
     dir_x = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
     dir_y = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
 
+    if dir_x != 0:
+        facing = dir_x
+
     x += dir_x * SPEED
     y += dir_y * SPEED
 
