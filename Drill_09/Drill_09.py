@@ -44,7 +44,8 @@ while running:
     if dir_x != 0:
         facing = dir_x
 
-    x += dir_x * SPEED
+    half_size = CHARACTER_SIZE // 2
+    x = max(half_size, min(WIDTH - half_size, x + dir_x * SPEED))
     y += dir_y * SPEED
 
     clear_canvas()
