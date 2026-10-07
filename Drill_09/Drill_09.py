@@ -32,6 +32,7 @@ def handle_events():
             if event.key == SDLK_ESCAPE:
                 running = False
             elif event.key in (SDLK_RIGHT, SDLK_LEFT, SDLK_UP, SDLK_DOWN):
+                # 집합을 사용해 키 반복 입력에도 속도가 증가하지 않게 한다.
                 pressed_keys.add(event.key)
                 if event.key == SDLK_RIGHT:
                     facing = 1
