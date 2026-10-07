@@ -18,8 +18,8 @@ running = True
 pressed_keys = set()
 x, y = WIDTH // 2, HEIGHT // 2
 frame = 0
-facing = 1
-animation = 300
+facing = 1  # 1: 오른쪽, -1: 왼쪽
+animation = 300  # 오른쪽 idle
 
 
 def handle_events():
